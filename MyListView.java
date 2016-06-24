@@ -19,7 +19,7 @@ import android.widget.AdapterView;
  * Created by akira on 2016/6/7.
  */
 
-//	下載了一份政府提供的旅館OpenData　JSON資料 讀進來 放到ListView中
+//	政府提供的旅館OpenData　JSON資料 讀進來 放到ListView中
 public class MyListView extends ListActivity {
 
 	private Context context;
@@ -139,24 +139,10 @@ public class MyListView extends ListActivity {
 			} else {
 				Tel = "無電話資訊";
 			}
-
-			Intent intent = new Intent();
-			intent.setClass(MyListView.this, MapsActivity.class);
-
-			intent.putExtra("X", X);
-			intent.putExtra("Y", Y);
-			intent.putExtra("title", title);
-			intent.putExtra("tel", Tel);
-
-			startActivity(intent);
+			Log.i("Test", "選擇了: "+ msg);
 
 		}
 	}
 
-	public void maps() {
-		Intent intent = new Intent();
-		intent.setClass(MyListView.this, MapsActivity.class);
-		startActivity(intent);
-	}
 
 }
